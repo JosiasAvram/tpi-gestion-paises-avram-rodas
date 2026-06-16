@@ -80,7 +80,7 @@ python ejecutar.py
 
 - **Agregar país:** solicita nombre, población, superficie y continente. No permite campos vacíos ni países duplicados.
 - **Actualizar país:** modifica la población y la superficie de un país existente.
-- **Buscar por nombre:** coincidencia parcial (ej. `arg` → Argentina) o exacta.
+- **Buscar por nombre:** coincidencia parcial (ej. `arg` → Argentina), sin distinguir mayúsculas y con un mínimo de 3 caracteres. Al ser parcial, también encuentra el país escribiendo el nombre completo.
 - **Filtrar:** por continente, por rango de población o por rango de superficie.
 - **Ordenar:** por nombre, población o superficie, en orden ascendente o descendente.
 - **Estadísticas:** país con mayor y menor población, promedio de población, promedio de superficie y cantidad de países por continente.
@@ -92,13 +92,14 @@ python ejecutar.py
 
 ### Buscar por nombre (coincidencia parcial)
 
+La búsqueda es por coincidencia parcial (no distingue mayúsculas) y exige un mínimo de 3 caracteres. Al ser parcial, también encuentra el país si se escribe el nombre completo.
+
 ```
 Elija una opción: 4
 --- BUSCAR POR NOMBRE ---
-1. Coincidencia parcial (ej. 'arg' encuentra 'Argentina')
-2. Coincidencia exacta
-Elija una opción: 1
-Texto a buscar: arg
+Texto a buscar (mínimo 3 letras): ar
+  -> Debe ingresar al menos 3 caracteres.
+Texto a buscar (mínimo 3 letras): arg
 
 NOMBRE                    POBLACIÓN    SUPERFICIE (km²)  CONTINENTE
 ------------------------------------------------------------------------
