@@ -5,7 +5,7 @@ Módulo CONSULTAS Y REPORTES del Trabajo Práctico Integrador.
 Autor: Josías Alexis Avram
 
 Responsabilidades de este módulo:
-    - Búsqueda de países por nombre (coincidencia parcial o exacta).
+    - Búsqueda de países por nombre (coincidencia parcial).
     - Filtros: por continente, por rango de población y por rango de superficie.
     - Ordenamientos: por nombre, población o superficie (ascendente o descendente).
     - Estadísticas: país con mayor/menor población, promedios y conteo por continente.
@@ -48,21 +48,20 @@ def mostrar_paises(paises):
 #  BÚSQUEDA POR NOMBRE
 # ==========================================================================
 
-def buscar_por_nombre(paises, texto, exacta=False):
+def buscar_por_nombre(paises, texto):
     """
-    Busca países por nombre.
+    Busca países cuyo nombre CONTENGA el texto ingresado (coincidencia parcial,
+    sin distinguir mayúsculas/minúsculas).
 
-    - Si exacta=False (por defecto): coincidencia PARCIAL, sin distinguir
-    mayúsculas/minúsculas (ej. "arg" encuentra "Argentina").
-    - Si exacta=True: el nombre debe coincidir completamente.
+    Al ser parcial, también cubre la búsqueda exacta: si se escribe el nombre
+    completo (ej. "argentina"), igualmente lo encuentra.
 
     Devuelve una lista nueva con los países encontrados.
     """
     texto = texto.strip().lower()
     resultado = []
     for pais in paises:
-        nombre = pais["nombre"].lower()
-        if (exacta and nombre == texto) or (not exacta and texto in nombre):
+        if texto in pais["nombre"].lower():
             resultado.append(pais)
     return resultado
 

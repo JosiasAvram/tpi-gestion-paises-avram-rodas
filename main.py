@@ -26,18 +26,18 @@ ARCHIVO_CSV = "paises.csv"
 # ==========================================================================
 
 def menu_buscar(paises):
-    """Submenú de búsqueda por nombre (parcial o exacta)."""
+    """Búsqueda por nombre (coincidencia parcial, mínimo 3 caracteres)."""
     print("\n--- BUSCAR POR NOMBRE ---")
-    print("1. Coincidencia parcial (ej. 'arg' encuentra 'Argentina')")
-    print("2. Coincidencia exacta")
-    opcion = core.validar_texto("Elija una opción: ")
 
-    texto = core.validar_texto("Texto a buscar: ")
-    if opcion == "2":
-        resultado = cr.buscar_por_nombre(paises, texto, exacta=True)
-    else:
-        resultado = cr.buscar_por_nombre(paises, texto, exacta=False)
+    # Pedimos el texto y exigimos al menos 3 caracteres.
+    # Si no cumple, avisamos y volvemos a pedir (bucle hasta que sea válido).
+    while True:
+        texto = input("Texto a buscar (mínimo 3 letras): ").strip()
+        if len(texto) >= 3:
+            break
+        print("  -> Debe ingresar al menos 3 caracteres.")
 
+    resultado = cr.buscar_por_nombre(paises, texto)
     cr.mostrar_paises(resultado)
 
 
