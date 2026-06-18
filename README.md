@@ -154,9 +154,7 @@ Continente: América
 ## Enlaces de la entrega
 
 - **Documentación (PDF):** `informe.pdf` (en la raíz del repositorio).
-- **Video demostrativo (10–15 min):** _<pegar aquí el enlace público de YouTube/Drive>_
-
-> Recordatorio: el video debe mostrar a ambos integrantes a cámara al inicio y la demostración de todos los flujos del programa.
+- **Video demostrativo (10–15 min):** https://www.youtube.com/watch?v=2-HuORZrEVs
 
 ---
 
